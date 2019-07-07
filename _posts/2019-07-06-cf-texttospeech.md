@@ -17,7 +17,7 @@ We just need to focus on the top levels of the development stack which is the bu
 
 It only took me less than half a day to design and build an HTTP endpoint which converts the text contents in the request into synthesize natural-sounding speech.
 
-Below are the steps of the solution.
+### Solution overview
 <a name='cf-texttospeech'>![](/img/cf-texttospeech.JPG)</a>
 
 1. Send an HTTP request to the endpoint with the text payload which will be converted to speech.
@@ -27,3 +27,5 @@ Below are the steps of the solution.
 5. The cloud function returns the URL of the audio file to the request.
 
 The above implementation is serverless and event-driven, because I don't need to create any VM instance, install Python and all the relevant packages. The cloud function can automatically handle the scaling if the requests increase. And we only pay when the function is called. No money will be spent during idle time. 
+
+Sounds like interesting? Try it out with [this link](https://asia-east2-gcp-dev-201907.cloudfunctions.net/cf-new-text-post?text=Hi%20there,%20how%20are%20you?). You can replace the text you want. Have fun!
