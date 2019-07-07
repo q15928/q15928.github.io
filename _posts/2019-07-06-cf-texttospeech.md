@@ -4,12 +4,19 @@ title:      "Build a serverless text to speech endpoint"
 date:       2019-07-06 12:00:00
 author:     "Jason Feng"
 header-img: "img/post-bg-2015.jpg"
+excerpt_separator: <!--more-->
 tags:
     - GCP
     - Cloud Function
     - Text-to-Speech
     - Faas
 ---
+
+Implement a serverless and event-driven HTTP endpoint to convert text to speech using Cloud Function, Cloud Text-to-Speech API and Cloud Storage.
+
+Try it out with [this link](https://asia-east2-gcp-dev-201907.cloudfunctions.net/cf-new-text-post?text=Hi%20there,%20how%20are%20you?). You can replace the text you want. Have fun!
+
+<!--more-->
 
 With cloud technologies getting more sophisticated nowadays, we are literally able to to have infinite storage, computing powers, and networking. Cloud is now abstracting most of the underlying infrastructure, Operation Systems, software applications, library packages and dependencies. Depending on the different levels of abstraction, we know about IaaS, PaaS, FaaS, SaaS, etc., all the fancy acronyms. Moreover, we can easily utilise all the advanced technologies owned by the big tech companies through the cloud, like computer vision, speech recognition, NLP. 
 

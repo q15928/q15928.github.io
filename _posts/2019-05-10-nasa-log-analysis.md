@@ -4,12 +4,20 @@ title:      "Streaming process NASA web access logs on GCP"
 date:       2019-05-10 12:00:00
 author:     "Jason Feng"
 header-img: "img/post-bg-2015.jpg"
+mathjax: true
+excerpt_separator: <!--more-->
 tags:
     - GCP
     - Cloud Dataflow
     - BigQuery
     - streaming
 ---
+
+This is the drafted solution to ingest nasa web access logs, process and clean the data, store into a data warehouse for further analysis.
+
+It is implemented with GCP products, including Pub/Sub, Dataflow, BigQuery.
+
+<!--more-->
 
 ## Introdcution
 Inspired by the article [Scalable Log Analytics with Apache Spark — A Comprehensive Case-Study](https://towardsdatascience.com/scalable-log-analytics-with-apache-spark-a-comprehensive-case-study-2be3eb3be977) to process nasa logs with Apache Spark, I implement a drafted solution with some products on GCP. This can be reframed as a typical data streaming process pipeline. More concretely, we have web access logs which are generated continuously to ingest to the pipeline, then we need to parse each log into to different fields, finally it is required to store into a database or data warehouse for further analysis (i.e. visualisation, hourly/daily reports, anomaly detection, etc.). GCP provides a variety of products which are well fit for this use case. Let us dive into the details.
