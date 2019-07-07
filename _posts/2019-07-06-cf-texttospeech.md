@@ -18,7 +18,7 @@ We just need to focus on the top levels of the development stack which is the bu
 It only took me less than half a day to design and build an HTTP endpoint which converts the text contents in the request into synthesize natural-sounding speech.
 
 Below are the steps of the solution.
-![](images/cf-texttospeech.JPG)
+<a name='cf-texttospeech'>![](/img/cf-texttospeech.JPG)</a>
 
 1. Send an HTTP request to the endpoint with the text payload which will be converted to speech.
 2. The cloud function receives the request. It will then call the Cloud Text-to-Speech API to convert the text to speech with the specific voice and language. Behind the scene, this is powered by DeepMind’s groundbreaking research in WaveNet and Google’s neural networks.
