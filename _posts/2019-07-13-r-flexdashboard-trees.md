@@ -1,15 +1,14 @@
 ---
 layout:     post
-title:      "Build a serverless text to speech endpoint"
-date:       2019-07-06 12:00:00
+title:      "Flexdashboard makes easy for data visualization"
+date:       2019-07-13 12:00:00
 author:     "Jason Feng"
 header-img: "img/post-bg-2015.jpg"
 excerpt_separator: <!--more-->
 tags:
-    - GCP
-    - Cloud Function
-    - Text-to-Speech
-    - Faas
+    - R
+    - Visualization
+    - Flexdashboard
 ---
 
 Flexdashboard is like a hidden gem which is mainly known for those people using R. In my opinion, it is a great visualization tool. You can substitute flexdashboard for those expensive commercial tools like Tableau and Power BI. Most importantly, it is totally free! You just need to know writing code in R.
