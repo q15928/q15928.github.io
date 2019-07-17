@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Flexdashboard makes easy for data visualization"
+title:      "Data visualization made easy with Flexdashboard"
 date:       2019-07-13 12:00:00
 author:     "Jason Feng"
 header-img: "img/post-bg-2015.jpg"
@@ -27,13 +27,13 @@ Here are some of the merit points which I like to use it for BI visualization.
 
 - It supports multiple tabs and rich sets of page layouts.
 - It provides storyboard layouts for presenting sequences of visualizations and related commentary.
-- You can combine data anlysis and manipulation with packages like dplyr, data.table.
-- You can integrate it with any visualisation packages available in R, such as ggplot2, plotly, leaflet, etc.
-- You can ship the whole dashboard as a single HTML file.
-- You can parameterize, schedule and execute the dashboard in a fully automation way. I had ever run customer insight dashboards at the first day of every month.
+- We can combine data anlysis and manipulation with packages like dplyr, data.table.
+- We can integrate it with any visualisation packages available in R, such as ggplot2, plotly, leaflet, etc.
+- We can ship the whole dashboard as a single HTML file.
+- We can parameterize, schedule and execute the dashboard in a fully automation way. I had ever run customer insight dashboards at the first day of every month.
 
-With less than 100 lines of code, I produce a dashboard as shown below.
+With less than 100 lines of code, I produce an interactive dashboard as shown below. (Credit to qwiklabs for the idea)
 ![](/img/flexdashboard-tree-2019-07-16.png)
 
-You can play the interactive dashboard with this [link](https://q15928.github.io/contents/trees_san_francisco.html). [The code is here](https://github.com/q15928/r-playground/blob/master/flexdashboard-tree/trees_san_francisco.Rmd) as well.
+You can play with dashboard with this [link](https://q15928.github.io/contents/trees_san_francisco.html). [The code is here](https://github.com/q15928/r-playground/blob/master/flexdashboard-tree/trees_san_francisco.Rmd) as well.
 
