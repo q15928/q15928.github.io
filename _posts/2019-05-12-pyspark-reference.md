@@ -12,7 +12,7 @@ tags:
     - Spark SQL
 ---
 
-I put the source code snippets from the book [Spark: The Definitive Guide](http://shop.oreilly.com/product/0636920034957.do) into [one piece](https://github.com/q15928/python-snippets/blob/master/pyspark/pyspark-def-guide.py). They cover most of the operations and common functions for DataFrames and Spark SQL in our daily life when writing Spark code.
+I put the source code snippets from the book __Spark: The Definitive Guide__ into one piece. They cover most of the operations and common functions for DataFrames and Spark SQL in our daily life when writing Spark code.
 
 <!--more-->
 
@@ -26,3 +26,4 @@ The source code snippets include sections as:
 - Join multiple DataFrames with different types: inner join, outer join, left/right join, cross join
 - Read and write with different data sources, such as csv, JSON, Parquet, SQL Databases  
 
+It can be found [here](https://github.com/q15928/python-snippets/blob/master/pyspark/pyspark-def-guide.py).
