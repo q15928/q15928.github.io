@@ -10,7 +10,7 @@ tags:
     - Configuration
     - Infrastructure as Code
 ---
-This is an excerption from [qwiklabs](https://google.qwiklabs.com/quests/62). It is a quick introduction of Terraform which is an open source Infrastructure as Code tool to create, change and version the infrastructure safely and efficiently.
+This is an excerption from **qwiklabs**. It is a quick introduction of Terraform which is an open source Infrastructure as Code tool to create, change and version the infrastructure safely and efficiently.
 
 <!--more-->
 ### Quick Facts
@@ -130,3 +130,4 @@ The Terraform binary has many different CLI arguments that it supports. We'll di
 
 `terraform destroy` refreshes provider/resource states and removes all resources that Terraform created.
 
+*Note:* This is originated from [qwiklabs](https://google.qwiklabs.com/quests/62).
