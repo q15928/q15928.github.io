@@ -11,19 +11,19 @@ tags:
     - K-means
 ---
 
-Customer segmentation is the marketing strategy that divides customers into different groups based on some specific ways of similarity. Marketing teams can tailor their content and media to unique audiences according to the segmentations. BigQuery, the analytics data warehouse on Google Cloud, now enables users to create and execute machine learning models with standard SQL to address such solution easily and quickly.
+Customer segmentation is the marketing strategy that divides customers into different groups based on some specific ways of similarity. Marketing teams can tailor their content and media to unique audiences according to the segmentations. BigQuery, the analytics data warehouse on Google Cloud, now enables users to create and execute machine learning models with standard sql to address such solution easily and quickly.
 
 <!--more-->
 ### Introduction
-BigQuery ML is a capability inside BigQuery that allows data scientists and analysts to build and operationalize machine learning models in minutes on massive structured or semi-structured datasets. BigQuery ML democratizes predictive analytics so that data analysts unfamiliar with programming languages like Python and Java can build machine learning models with basic SQL queries.
+BigQuery ML is a capability inside BigQuery that allows data scientists and analysts to build and operationalize machine learning models in minutes on massive structured or semi-structured datasets. BigQuery ML democratizes predictive analytics so that data analysts unfamiliar with programming languages like Python and Java can build machine learning models with basic sql queries.
 
 ### Solution
 Just following the steps below, we can create the K-means model to build customer segmentations. All is done within the BigQuery console.
 
 #### Step 1: Create the model
 
-With SQL-like queries, we can create and train the k-means clustering model. We just need to provide is the k (number of clusters), distance metric, and features.
-```SQL
+With sql-like queries, we can create and train the k-means clustering model. We just need to provide is the k (number of clusters), distance metric, and features.
+```sql
 CREATE MODEL
   my_dataset.customer_segmentation_1
 OPTIONS
@@ -41,7 +41,7 @@ FROM
 
 #### Step 2: Evaluate the model
 The evaluation provides metrics as [Davies–Bouldin index](https://en.wikipedia.org/wiki/Davies%E2%80%93Bouldin_index) and Mean squared distance.
-```SQL
+```sql
 SELECT
   *
 FROM
@@ -51,7 +51,7 @@ FROM
 
 #### Step 3: Make prediction with the trained model
 We can then get the clustering result for each observation. 
-```SQL
+```sql
 SELECT
   *
 FROM
