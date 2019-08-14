@@ -19,6 +19,7 @@ BigQuery ML is a capability inside BigQuery that allows data scientists and anal
 
 ### Solution
 Just following the steps below, we can create the K-means model to build customer segmentations. All is done within the BigQuery console.
+
 *[Credit to [Emilee McWilliams](https://github.com/emileemc/kmeans) for the data source and R code]*
 ![](/img/bqml-cust-seg-viz-190727.png)
 
