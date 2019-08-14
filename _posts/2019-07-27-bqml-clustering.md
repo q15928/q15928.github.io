@@ -19,6 +19,8 @@ BigQuery ML is a capability inside BigQuery that allows data scientists and anal
 
 ### Solution
 Just following the steps below, we can create the K-means model to build customer segmentations. All is done within the BigQuery console.
+*[Credit to [Emilee McWilliams](https://github.com/emileemc/kmeans) for the data source and R code]*
+![](/img/bqml-cust-seg-viz-190727.png)
 
 #### Step 1: Create the model
 
@@ -64,7 +66,7 @@ FROM
   ML.PREDICT(model my_dataset.customer_segmentation_1,
     table my_dataset.abcbank)
 ```
-The output looks like below.
+The output looks like below. We can see that each observation is assigned to the cluster with the shortest distance to the centroid.
 ![](/img/bqml-customer-seg-190727.png)
 
 ### K-means under the hood
@@ -84,3 +86,65 @@ Here are the steps to implement k-means clustering algorithm.
 5. Repeat step 3 and 4, until the result is converged or reached to the pre-defined iteration.
 
 The above approach is called Expectation-Maximization. Step 3 is the E-step, and step 4 is the M-step. There are some variants for step 2 to initialise the centroids (i.e. k-means++) which will lead to speed up the whole process.
+
+#### K-means implemented with Python
+Below is the K-means implementation written in Python with Numpy.
+```python
+import numpy as np
+
+def euclidean_distance(M, v):
+    """compute the Euclidean distance
+    
+    Args:
+    =====
+    M: matrix of observations
+    v: data point as a vector
+
+    Return:
+    =======
+    The distances to v for each observation
+    """
+    assert M.shape[1] == v.shape[0]
+    distance = np.sqrt(np.sum((M - v) ** 2, axis=1))
+    return distance
+
+def kmeans(M, k, iterations=20):
+    """implement k-means clustering with Euclidean distance
+
+    Args:
+    =====
+    M:          matrix of observations
+    k:          number of clusters
+    iterations: max number of iterations k-means algorithm to run
+
+    Return:
+    =======
+    centoids:   the centroids of the clusters
+    clusters:   cluster id for each observation
+    distances:  distances to centroids for each observation
+    
+    """
+    # initialise the centroids
+    pos = np.random.choice(np.arange(M.shape[0]), size=k, replace=False)
+    centroids = M[pos, :]
+
+    # initialise the distances matrix
+    distances = np.zeros((M.shape[0], centroids.shape[0]))
+    prev_distances = distances
+
+    for _ in range(iterations):
+        # calculate the distance for each observation
+        for i in range(centroids.shape[0]):
+            distances[:, i] = euclidean_distance(M, centroids[i, :])
+        if distances == prev_distances:
+            break
+
+        # assign observation to the cluster
+        clusters = np.argmin(distances, axis=1)
+
+        # update the centroids
+        for i in range(centroids.shape[0]):
+            centroids[i, :] = np.mean(M[clusters==i, :], axis=0)
+
+    return centroids, clusters, distances
+```
