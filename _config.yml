@@ -69,8 +69,8 @@ kramdown:
 # Baidu Analytics
 # ba_track_id: 1adf2d3145a435baa683d84388135812
 # Google Analytics
-# ga_track_id: 'UA-133955198-1'            # Format: UA-xxxxxx-xx
-# ga_domain: q15928.github.io
+ga_track_id: 'UA-108695985-2'            # Format: UA-xxxxxx-xx
+ga_domain: q15928.github.io
 
 
 
