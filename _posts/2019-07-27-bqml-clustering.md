@@ -20,7 +20,6 @@ BigQuery ML is a capability inside BigQuery that allows data scientists and anal
 ### Solution
 Just following the steps below, we can create the K-means model to build customer segmentations. All is done within the BigQuery console.
 
-*[Credit to [Emilee McWilliams](https://github.com/emileemc/kmeans) for the data source and R code]*
 ![](/img/bqml-cust-seg-viz-190727.png)
 
 #### Step 1: Create the model
@@ -123,7 +122,6 @@ def kmeans(M, k, iterations=20):
     centoids:   the centroids of the clusters
     clusters:   cluster id for each observation
     distances:  distances to centroids for each observation
-    
     """
     # initialise the centroids
     pos = np.random.choice(np.arange(M.shape[0]), size=k, replace=False)
@@ -131,14 +129,16 @@ def kmeans(M, k, iterations=20):
 
     # initialise the distances matrix
     distances = np.zeros((M.shape[0], centroids.shape[0]))
-    prev_distances = distances
+    prev_distances = distances.copy()
 
     for _ in range(iterations):
         # calculate the distance for each observation
         for i in range(centroids.shape[0]):
             distances[:, i] = euclidean_distance(M, centroids[i, :])
-        if distances == prev_distances:
+        if np.array_equal(distances, prev_distances):
             break
+        del prev_distances
+        prev_distances = distances.copy()
 
         # assign observation to the cluster
         clusters = np.argmin(distances, axis=1)
@@ -149,3 +149,9 @@ def kmeans(M, k, iterations=20):
 
     return centroids, clusters, distances
 ```
+
+**Ref:**
+- *Credit to [Emilee McWilliams](https://github.com/emileemc/kmeans) for the data source and R code*
+- *[Predictive marketing analytics using BigQuery ML machine learning templates](https://cloud.google.com/blog/products/data-analytics/predictive-marketing-analytics-using-bigquery-ml-machine-learning-templates)*
+- *[K-means Cluster Analysis](https://uc-r.github.io/kmeans_clustering)*
+- *[Understanding and Using k-means Clustering](https://www.r-bloggers.com/learning-data-science-understanding-and-using-k-means-clustering/)*
