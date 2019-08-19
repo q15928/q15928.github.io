@@ -73,6 +73,10 @@ The output looks like below. We can see that each observation is assigned to the
 
 K-means is an unsupervised machine learning technique which works on datasets without labels. K-means is one of the most popular "clustering" algorithms. It will group data into clusters which are similar to one another.
 
+The goals for K-means to achieve are:
+1. The distance between observations within a cluster should be as small as possible.
+2. The distance of the centroids should be as big as possible.
+
 Here are the steps to implement k-means clustering algorithm.
 
 1. Specify the value of k (number of clusters), and the distance metric (i.e. Euclidean distance).
