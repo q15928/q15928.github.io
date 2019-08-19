@@ -51,5 +51,5 @@ Then run
  ```                  
 
 **Ref**
-https://cran.r-project.org/bin/linux/ubuntu/
+- [Ubuntu packages for R](https://cran.r-project.org/bin/linux/ubuntu/)
 - *[Installing R and Rstudio on Ubuntu Linux](https://blog.zenggyu.com/en/post/2018-01-29/installing-r-r-packages-e-g-tidyverse-and-rstudio-on-ubuntu-linux/)*
