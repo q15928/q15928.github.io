@@ -3,7 +3,7 @@ layout:     post
 title:      "Calculate Moving Average with Python, SQL and R"
 date:       2019-08-10 12:00:00
 author:     "Jason Feng"
-header-img: "img/tunnel-4427609_1920.jpg.jpg"
+header-img: "img/tunnel-4427609_1920.jpg"
 excerpt_separator: <!--more-->
 tags:
     - Time-Series
@@ -35,7 +35,7 @@ def retrieve_data(start_dt, end_dt, symbol_list):
 ```
 
 ### Compute moving average using Pandas
-Pandas come with rich sets of functions for time-series / financial data analysis. I think that is because Wes McKinney, Pandas creator, is coming from financial background. We can simply apply the DataFrame function `[rolling](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html)` followed by `mean` function. We will get the moving avereage of the given window. There are more parameters we can specify if we want to have different types of rolling window, i.e. exponential. In addition to this, we need to use `groupby` function in order to calculate the moving average for each symbol.
+Pandas come with rich sets of functions for time-series / financial data analysis. I think that is because Wes McKinney, Pandas creator, is coming from financial background. We can simply apply the DataFrame function `rolling` followed by `mean` function. We will get the moving avereage of the given window. There are more parameters we can specify if we want to have different types of rolling window, i.e. exponential. In addition to this, we need to use `groupby` function in order to calculate the moving average for each symbol.
 ```python
 def compute_ma(df, window):
     """Compute the moving average of Adj Close for each Symbol"""
