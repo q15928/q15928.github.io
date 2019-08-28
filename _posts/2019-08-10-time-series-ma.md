@@ -58,16 +58,30 @@ SELECT
   Date,
   Symbol,
   Adj_Close,
-  AVG(Adj_Close) OVER (PARTITION BY Symbol ORDER BY UNIX_DATE(Date) ASC RANGE BETWEEN 19 PRECEDING AND CURRENT ROW) AS ma20
+  AVG(Adj_Close) OVER (
+    PARTITION BY Symbol ORDER BY UNIX_DATE(Date) ASC 
+    RANGE BETWEEN 19 PRECEDING AND CURRENT ROW
+    ) AS ma20,
+    AVG(Adj_Close) OVER (
+    PARTITION BY Symbol ORDER BY UNIX_DATE(Date) ASC 
+    RANGE BETWEEN 49 PRECEDING AND CURRENT ROW
+    ) AS ma50
 FROM my_dataset.stocks
 ```
-If we just want to compute the moving average from the preceding *N* records to current record, we can use **ROWS** instead of **RANGE**. The SQL statement in BigQuery.
+If we just want to compute the moving average from the preceding *N* records to current record, we can use **ROWS** instead of **RANGE**. The SQL statement looks like below.
 ```sql
 SELECT
   Date,
   Symbol,
   Adj_Close,
-  AVG(Adj_Close) OVER (PARTITION BY Symbol ORDER BY Date ASC ROWS BETWEEN 19 PRECEDING AND CURRENT ROW) AS ma20
+  AVG(Adj_Close) OVER (
+    PARTITION BY Symbol ORDER BY Date ASC 
+    ROWS BETWEEN 19 PRECEDING AND CURRENT ROW
+    ) AS ma20,
+    AVG(Adj_Close) OVER (
+    PARTITION BY Symbol ORDER BY Date ASC 
+    ROWS BETWEEN 49 PRECEDING AND CURRENT ROW
+    ) AS ma50
 FROM my_dataset.stocks
 ```
 
@@ -76,8 +90,6 @@ data.table provides fast rolling functions to calculate aggregation on sliding w
 ```r
 library(data.table)
 library(lubridate)
-
-setwd("~/mds/git-repos/python-snippets/ma-timeseries/")
 
 compute_ma <- function(dt, window) {
   dt <- dt[, paste0("ma", window) := lapply(.SD, frollmean, n=window, fill=NA), 
