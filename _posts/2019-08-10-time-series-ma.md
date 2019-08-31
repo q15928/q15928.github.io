@@ -13,7 +13,7 @@ tags:
     - R
 ---
 
-Nowadays time-seires data are ubiquitous, from mobile networks, IoT devices to finance markets. Moving average is a simple yet fundamental method when it comes to time-series data analysis. For example, MA crossover is one of the strategies applied to quantatitive trading. Here we can find how to compute moving average using SQL, Python and R.
+Nowadays time-series data are ubiquitous, from mobile networks, IoT devices to finance markets. Moving average is a simple yet fundamental method when it comes to time-series data analysis. For example, MA crossover is one of the strategies applied to quantitative trading. Here we can find how to compute moving average using Python, SQL and R.
 <!--more-->
 ![](/img/google-ma-2019-08-23.png)
 ### The Data
