@@ -93,7 +93,7 @@ df_mean.show(truncate=False)
 +-----+-------------------------+------+----------+-------------------------+-------------------+-------+
 ```
 If we just want to compute the moving average from the preceding *N* records to current record, we can use **rangeBetween** instead of **rowsBetween**.
-```sql
+```python
 win_spec = Window.partitionBy('Symbol') \
     .orderBy('unix_time') \
     .rowsBetween(-4, 0)
@@ -111,5 +111,6 @@ df_mean.show(truncate=False)
 |25   |2017-03-18T11:27:18+00:00|GOOG  |1489836438|18/03/2017 22:27:18 +1100|2017-03-18 00:00:00|19.2   |
 +-----+-------------------------+------+----------+-------------------------+-------------------+-------+
 ```
+Soure code can be found [here](https://github.com/q15928/python-snippets/blob/master/pyspark/time-series/pyspark_ts.py).
 
 *Image by [Peter H](https://pixabay.com/users/Tama66-1032521/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4427609) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4427609)*
