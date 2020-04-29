@@ -89,7 +89,7 @@ Here are the steps to implement k-means clustering algorithm.
 
 5. Repeat step 3 and 4, until the result is converged or reached to the pre-defined iteration.
 
-The above approach is called Expectation-Maximization. Step 3 is the E-step, and step 4 is the M-step. There are some variants for step 2 to initialise the centroids (i.e. k-means++) which will lead to speed up the whole process.
+The above approach is called __Expectation-Maximization__. Step 3 is the E-step, and step 4 is the M-step. There are some variants for step 2 to initialise the centroids (i.e. k-means++) which will lead to speed up the whole process.
 
 #### K-means implemented with Python
 Below is the K-means implementation written in Python with Numpy.
@@ -97,7 +97,8 @@ Below is the K-means implementation written in Python with Numpy.
 import numpy as np
 
 def euclidean_distance(M, v):
-    """compute the Euclidean distance
+    """
+    Compute the Euclidean distance
     
     Args:
     =====
@@ -112,8 +113,10 @@ def euclidean_distance(M, v):
     distance = np.sqrt(np.sum((M - v) ** 2, axis=1))
     return distance
 
+
 def kmeans(M, k, iterations=20):
-    """implement k-means clustering with Euclidean distance
+    """
+    Implement k-means clustering with Euclidean distance
 
     Args:
     =====
@@ -154,8 +157,17 @@ def kmeans(M, k, iterations=20):
     return centroids, clusters, distances
 ```
 
+#### Choose the best _K_
+When using k-means clustering, the most important parameter is a target number of clusters to generate, __*k*__. In practice, we rarely know the “true” number of clusters in advance, so the best practice is to try several values of k until the average intracluster distance stops decreasing dramatically.
+
+We can test with a given ranging and use the [elbow method](https://uc-r.github.io/kmeans_clustering#elbow) to chose the correct k. The idea of the elbow method is to run k-means clustering on the dataset for a range of values of k, calculate Within Set Sum of Squared Error (WSSSE) and select the best k based on the sudden drop in WSSSE.
+
+Soure code can be found [here](https://github.com/q15928/python-snippets/blob/master/k-means/).
+
 **Ref:**
 - *Credit to [Emilee McWilliams](https://github.com/emileemc/kmeans) for the data source and R code*
 - *[Predictive marketing analytics using BigQuery ML machine learning templates](https://cloud.google.com/blog/products/data-analytics/predictive-marketing-analytics-using-bigquery-ml-machine-learning-templates)*
 - *[K-means Cluster Analysis](https://uc-r.github.io/kmeans_clustering)*
 - *[Understanding and Using k-means Clustering](https://www.r-bloggers.com/learning-data-science-understanding-and-using-k-means-clustering/)*
+
+*Image by [Peter H](https://pixabay.com/users/Tama66-1032521/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4427609) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4427609)*
