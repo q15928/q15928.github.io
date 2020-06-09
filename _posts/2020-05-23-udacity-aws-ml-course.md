@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Run a Machine Learning Pipeline with PySpark"
-date:       2019-10-20 12:00:00
+title:      "AWS Machine Learning Foundations Part One"
+date:       2020-05-23 12:00:00
 author:     "Jason Feng"
 header-img: "img/tunnel-4427609_1920.jpg"
 excerpt_separator: <!--more-->
