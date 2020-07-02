@@ -12,6 +12,7 @@ tags:
 ---
 Notes from workshops of building a streaming data platform on AWS.
 <!--more-->
+
 Speed is definitely a key characteristic businesses are looking to have for a competitive edge in today’s world. Consumers increasingly want experiences that are timely, targeted, and tailored to their specific needs, whether they are applying for a loan, investing, checking health alerts, online shopping , tracking home security alerts, or monitoring systems.
 
 Amazon Kinesis makes it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information. It is fully managed, scalable, real-time streaming data process platfrom. It provides the following services:
