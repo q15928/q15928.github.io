@@ -18,6 +18,7 @@ __Supervised Learning__: Models are presented wit input data and the desired res
 __Unsupervised Learning__: Models are presented with datasets that have no labels or predefined patterns, and the model will attempt to infer the underlying structures from the dataset. Generative AI is a type of unsupervised learning.
 __Reinforcement learning__: The model or agent will interact with a dynamic world to achieve a certain goal. The dynamic world will reward or punish the agent based on its actions. Overtime, the agent will learn to navigate the dynamic world and accomplish its goal(s) based on the rewards and punishments that it has received.
 ![](/img/2020-05-30-types-of-ml.jpg)
+
 ### Generative AI
 Generative AI is one of the biggest recent advancements in artificial intelligence technology because of its ability to create something new. It opens the door to an entire world of possibilities for human and computer creativity, with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects. It takes two neural networks against each other to produce new and original digital works based on sample inputs.
 
@@ -26,6 +27,7 @@ AWS Deep Composer uses Generative AI, or specifically Generative Adversarial Net
 
 The best way we’ve found to explain this is to use the metaphor of an orchestra and conductor. In this context, the generator is like the orchestra and the discriminator is like the conductor. The orchestra plays and generates the music. The conductor judges the music created by the orchestra and coaches the orchestra to improve for future iterations. So an orchestra, trains, practices, and tries to generate music, and then the conductor coaches them to produced more polished music.
 ![](/img/2020-05-30-aws-mle-orchestra-metaphor.jpg)
+
 ### Generative adversarial networks
 Generative Adversarial Networks (GANs) are a type of machine learning network in which two neural networks compete. One network is tasked with generating realistic-seeming content (unsupervised learning), while the other network is tasked with distinguishing the generated content against real data (supervised learning).
 
@@ -42,11 +44,10 @@ The results of the discriminator's judgements are used to train both models. The
 
 This back-and-forth behavior, where the two models are directly competing against each other, is the adversarial part of GANs.
 ![](/img/2020-05-30-aws-mle-demo-gan-image.png)
+
 ### AWS DeepComposer Workflow
 1. Use the AWS DeepComposer keyboard or play the virtual keyboard in the AWS DeepComposer console to input a melody.
-
 2. Use a model in the AWS DeepComposer console to generate an original musical composition. You can choose from jazz, rock, pop, symphony or Jonathan Coulton pre-trained models or you can also build your own custom genre model in Amazon SageMaker.
-
 3. Publish your tracks to SoundCloud or export MIDI files to your favorite Digital Audio Workstation (like Garage Band) and get even more creative.
 
 ### AWS DeepComposer Under The Hood

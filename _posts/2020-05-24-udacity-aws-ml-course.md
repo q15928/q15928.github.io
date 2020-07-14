@@ -42,6 +42,25 @@ Here is a list of resources for advanced Python object-oriented programming topi
 - [multiple inheritance, mixins](https://easyaspython.com/mixins-for-fun-and-profit-cb9962760556) - A class can inherit from multiple parent classes
 - [Python decorators](https://realpython.com/primer-on-python-decorators/) - Decorators are a short-hand way for using functions inside other functions
 
+### Making a Package
+A package is a collection of Python modules. A Python package contained multiple files, a Python package also needs an `__init__.py` file. 
+
+A basic package structure looks like below.
+```
+package_name/
+    README.txt
+    setup.py
+    package_name/
+          __init__.py
+          module1.py
+          test/
+              __init__.py
+              test_module1.py
+```
+To install the local packge, change to the directory with the `setup.py` file. Then type `pip install .` or `pip install -e .` which is the devlop mode.
+
+Pip is a [Python package manager](https://pip.pypa.io/en/stable/) that helps with installing and uninstalling Python packages. You might have used pip to install packages using the command line: `pip install numpy`. When you execute a command like `pip install numpy`, pip will download the package from a Python package repository called [PyPi](https://pypi.org/).
+
 ### PyPi vs. Test PyPi
 Note that pypi.org and test.pypy.org are two different websites. You'll need to register separately at each website. If you only register at pypi.org, you will not be able to upload to the test.pypy.org repository.
 
@@ -84,4 +103,5 @@ Other than this command, the rest of the steps for uploading to PyPi are the sam
 - [Contributing to a Github Project](https://github.com/MarcDiethelm/contributing/blob/master/README.md)
 - [Overview of PyPi](https://docs.python.org/3/distutils/packageindex.html)
 - [MIT License](https://opensource.org/licenses/MIT)
+- [Making a Python Package](https://python-packaging-tutorial.readthedocs.io/en/latest/setup_py.html)
 

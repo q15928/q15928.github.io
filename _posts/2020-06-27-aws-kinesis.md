@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "AWS Kinesis"
+title:      "Streaming Process with AWS Kinesis"
 date:       2020-06-27 12:00:00
 author:     "Jason Feng"
 header-img: "img/tunnel-4427609_1920.jpg"
@@ -29,3 +29,4 @@ It provides the easy way to analyze streaming data, gain actionable insights, an
 ### Reference
 - [Building a streaming analytics application on AWS Labs](https://kinesis-immersion-day1.s3.amazonaws.com/immersionday/README.html)
 - [Amazon Kinesis Replay](https://github.com/aws-samples/amazon-kinesis-replay)
+- [AWS ANZ Webinars](https://anz-resources.awscloud.com/anz-webinars-on-demand)
