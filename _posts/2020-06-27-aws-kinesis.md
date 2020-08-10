@@ -30,9 +30,6 @@ It provides the easy way to analyze streaming data, gain actionable insights, an
 
 We can also deploy [Apache Flink](https://flink.apache.org/) application (supported Java or Scala) in Kinesis Data Analytics to process the streaming data. KDA will manage the underlying infrastruture and cluster used by Apache Flink, including provisioning compute resources, parallel processing, auto-scaling, and application backups. We just need to pay what we use.
 
-### Kinesis Video Steams
-To be updated.
-
 ![](/img/2020-06-27-aws-kinesis-arch.png)
 ### Reference
 - [Building a streaming analytics application on AWS Labs](https://kinesis-immersion-day1.s3.amazonaws.com/immersionday/README.html)
