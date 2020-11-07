@@ -65,7 +65,7 @@ AWS Step Functions lets us coordinate multiple AWS services into serverless work
 It is used a JSON-based language describe state machines. It provides rich states to suite different requirements of workflows, such as Choice to branch based on the output of previous task, error handling, running multiple tasks in parallel. 
 
 ### AWS Cloud​Formation 
-AWS CloudFormation allows us to model and provision, in an automated and secure manner, all the resources needed for the applications. This gives you a single source of truth for your AWS and third party resources.
+AWS CloudFormation allows us to provision all the resources needed for the applications in an automated and secure manner. We can define a template with all the resources required for a task, such as S3 buckets, Athena tables, Lambda Functions, Step Functions, IAM roles, etc.. With a few clicks, the stack can be deployed in a few minutes. If rollback is required for any reason, just delete the stack without affecting all the other applications.
 
 ### AWS IAM
 Security is always a prominent concern especially when dealing with sensitive data. We can use IAM to create a tailored role with the principle of least privilege to each service we use in AWS.
