@@ -9,8 +9,9 @@ tags:
     - AWS
     - Data Lake
 ---
-There is an introductive article of AWS services which can help to build data lake in WeChat. I translated to English as I found it quite intuitive.  
+There is an introductive article of AWS services which can help to build data lake in WeChat. I translated to English as I found it quite intuitive. 
 <!--more-->
+
 Long time ago, when data was limited, people could remembered them without noting down, or just put knots in the ropes.
 ![](/img/2020-04-23-aws-datalake-1.png)
 Then database was invented for the sake of more efficient recording and processing. The core of database was to query, insert, delete and update records for online transactions. For example, you spend with your bank card, the backend database is required to record this transaction in real time, and update the balance of your account.
