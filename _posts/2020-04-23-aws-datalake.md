@@ -9,7 +9,7 @@ tags:
     - AWS
     - Data Lake
 ---
-There is an introductive article of AWS services which can help to build data lake in WeChat. I translated to English as I found it quite intuitive. 
+There is an introductory article of AWS services which can help to build data lake in WeChat. I translated to English as I found it quite intuitive. 
 <!--more-->
 
 Long time ago, when data was limited, people could remembered them without noting down, or just put knots in the ropes.
