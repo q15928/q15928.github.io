@@ -3,7 +3,7 @@ layout:     post
 title:      "Financial Times' Data Platform"
 date:       2020-12-20 12:00:00
 author:     "Jason Feng"
-header-img: "mg/landscape-336542_1920.jpg"
+header-img: "img/landscape-336542_1920.jpg"
 excerpt_separator: <!--more-->
 tags:
     - AWS
@@ -12,6 +12,7 @@ tags:
 ---
 FTChinese is one of my favourite websites. Its parent Financial Times has been for more than 100 years and still standing out for high quality business news. In order to stay at the top of the trend, provide better readers experience, and embrace the new technologies, The Financial Times' Data Platform has been evolved to the 5th generation in the past 10 years.
 <!--more-->
+
 Some of the main improvements are:
 - From SQL Server to open-source technology, like Apache Kafka, Spark, Airflow, Delta Lake.
 - From one day latency to real time data ingestion and process.
