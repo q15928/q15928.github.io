@@ -1,14 +1,13 @@
 ---
 layout:     post
 title:      "Building Modern Python Applications on AWS - week two"
-date:       2021-02-27 12:00:00
+date:       2021-02-28 12:00:00
 author:     "Jason Feng"
 header-img: "img/tunnel-4427609_1920.jpg"
 excerpt_separator: <!--more-->
 tags:
     - AWS
     - API Gateway
-    - Boto3
 ---
 This is week two course notes of [Building Modern Python Applications on AWS](https://www.coursera.org/learn/building-modern-python-applications-on-aws/home/welcome) on Coursera.
 <!--more-->
