@@ -48,6 +48,8 @@ AWS Cloud9 managed temporary credentials have permission restrictions on their o
 ### AWS Credentials and Programmatic Access
 Read about best practices with AWS Credentials here: [https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html)
 
+Read about creating your first IAM admin user and user group[https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)
+
 
 ### Cloud9 Managed Credentials
 Throughout this course we will be calling AWS APIs from programs or commands running in Cloud9 Instances. It is recommended that you do not hard code your AWS credentials into your code for any reason, and you should rely on IAM Role Based Access as much as possible. To read more about Role Based Access in AWS please click here: [https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)
