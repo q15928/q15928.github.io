@@ -3,11 +3,13 @@ layout:     post
 title:      "AWS Technical Essentials"
 date:       2021-04-10 12:00:00
 author:     "Jason Feng"
-header-img: "img/img/landscape-336542_1920.jpg"
+header-img: "img/landscape-336542_1920.jpg"
 excerpt_separator: <!--more-->
 tags:
     - AWS
 ---
+Notes from AWS tech essentials and cloud practitioner essentials.
+<!--more-->
 ![](/img/2021-04-10-tech-essentials-architect-v2.png)
 ![](/img/2021-04-10-tech-essentials-architect-serverless.png)
 - [Overview of Amazon Web Services](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/aws-overview.pdf)
