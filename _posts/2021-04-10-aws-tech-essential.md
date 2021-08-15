@@ -60,13 +60,13 @@ Notes from AWS tech essentials and cloud practitioner essentials.
 - [VPC with Public and Private Subnets (NAT)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html)
 - [Route tables for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)
 - The default network ACL allows all traffic in and out of the subnet. To allow data to flow freely to **the subnet**, but you can modify it by adding your own rules. For custom network ACLs, all inbound and outbound traffic is denied until you add rules to specify which traffic to allow. Network ACLs perform stateless packet filtering. They remember nothing and check packets that cross the subnet border each way: inbound and outbound.
-- The next layer of security is for your EC2 Instances. Here, you can create a firewall called a **security group**. The default configuration of a security group blocks all inbound traffic and allows all outbound traffic. Security groups perform stateful packet filtering. They remember previous decisions made for incoming packets.
+- The next layer of security is for your EC2 Instances. Here, you can create a firewall called a **security group**. The default configuration of a security group blocks all inbound traffic and allows all outbound traffic. Security groups perform stateful packet filtering. They remember previous decisions made for incoming packets. Source can be defined as IP address or security group.
 ![](/img/2021-04-10-aws-acl-sg.png)
 - A virtual private gateway enables you to create a VPN connection between your VPC and a private network, such as your company’s data center. Although this connection is private and encrypted, it travels through the public internet, not through a dedicated connection.
 - [I host a website on an EC2 instance. How do I allow my users to connect on HTTP (80) or HTTPS (443)?](https://aws.amazon.com/premiumsupport/knowledge-center/connect-http-https-ec2/)
 - AWS storage services are grouped into [three categories](https://aws.amazon.com/what-is-cloud-object-storage/#types) – block storage, file storage, and object storage.
 - File storage is ideal when you require centralized access to files that need to be easily shared and managed by multiple host computers. Typically, this storage is **mounted onto multiple hosts**, and requires file locking and integration with existing file system communication protocols. File storage systems are often supported with a network attached storage (NAS) server. Amazon EFS and Amazon FSx can be mounted onto multiple EC2 instances.
-- EFS can be mounted to a single VPC at one time. It is regional resource and automatically scales. It can scale on demand to petabytes without disrupting applications. 
+- EFS can be mounted to a single VPC at one time. It is regional resource and automatically scales. It can scale on demand to petabytes without disrupting applications. It uses NFS v4.1 protocol.It uses security group to control the access. Only compatible with Linux AMI.
 - While file storage treats files as a singular unit, block storage splits files into fixed-size chunks of data called blocks that have their own addresses. Since each block is addressable, blocks can be retrieved efficiently. Block storage in the cloud is analogous to direct-attached storage (DAS) or a storage area network (SAN). 
 - Most EBS volumes can only be attached to a single EC2 instance at a time. Size up to 16 TB. Need to be the same AZ to attach EC2 instances. Volumes don't scale automatically.
 - Objects, much like files, are treated as a single unit of data when stored. However, unlike file storage, these objects are stored in a flat structure instead of a hierarchy. Each object is a file with a unique identifier. This identifier, along with any additional metadata, is bundled with the data and stored. Amazon S3 is not storage attached to compute.
@@ -75,7 +75,7 @@ Notes from AWS tech essentials and cloud practitioner essentials.
 - [Amazon S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/), write once / read many.
 - S3 Standard-IA provides the same level of availability of S3 Standard, but at a lower storage price and higher retrieval price.
 - In the S3 Intelligent-Tiering storage class, Amazon S3 monitors objects’ access patterns. If you haven’t accessed an object for 30 consecutive days, Amazon S3 automatically moves it to the infrequent access tier, S3 Standard-IA.
-- S3 provides strong consistency for new objects, while eventual consistency for updates.
+- [S3 has provided strong consistency since Dec 2020](https://aws.amazon.com/blogs/aws/amazon-s3-update-strong-read-after-write-consistency/).
 - S3 encryption for data at rest: SSE-S3, SSE-KMS, SSE-C; for data in transit: HTTPS.
 - Server-Side Encryption with Customer-Provided Keys (SSE-C) enables Amazon S3 to encrypt objects
 server side using an encryption key provided in the PUT request. The same key must be provided in GET
@@ -121,7 +121,7 @@ This validation is done by way of the ELB health checks feature. Monitoring is a
     - Establishing a connection to a backend EC2 instance using TCP, and marking the instance as available if the connection is successful.
     - Making an HTTP or HTTPS request to a webpage that you specify, and validating that an HTTP response code is returned.
 - Configure EC2 Auto Scaling components
-    - **Launch template or configuration:** What resource should be automatically scaled?
+    - **Launch template or configuration:** What resource should be automatically scaled? Launch template is a newer version which should be used.
     - **EC2 Auto Scaling Group:** Where should the resources be deployed?
     - **Scaling policies:** When should the resources be added or removed?
 - Within Amazon EC2 Auto Scaling, you can use two approaches: dynamic scaling and predictive scaling.
