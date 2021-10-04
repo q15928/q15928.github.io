@@ -1,0 +1,136 @@
+---
+layout:     post
+title:      "AWS Solutions Architect Associate Notes"
+date:       2021-04-21 12:00:00
+author:     "Jason Feng"
+header-img: "img/landscape-336542_1920.jpg"
+excerpt_separator: <!--more-->
+tags:
+    - AWS
+    - SAA
+---
+My notes for preparing AWS Solutions Architect Associate Certificate.
+<!--more-->
+- [Route 53 Active-active and active-passive failover](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-types.html)
+- An Elastic IP is a public IPv4 IP. Try to avoid use it, instead, use a random public IP and register a DNS name to it. The best option is to use ELB.
+- EC2 placement group
+    - Cluster placement groups places your instances next to each other giving you high performance computing and networking
+- Golden AMI are a standard in making sure you snapshot a state after an application installation so that future instances can boot up from that AMI quickly.
+- [Elastic Network Interface](https://aws.amazon.com/blogs/aws/new-elastic-network-interfaces-in-the-virtual-private-cloud/)
+- EBS volume types
+    - gp2: IOPS increases if the size increases
+    - gp3: can increase IOPS independantly
+- EBS multi-attach - io1/io2 family (in the same AZ)
+- EBS Volumes are created for a specific AZ. It is possible to migrate them between different AZ through backup and restore
+- EBS IOPS peaks at 16,000 IOPS. or equivalent 5334 GB.
+- Three types of Load Balancer
+    - Classic (v1): HTTP, HTTPS, TCP. Only support one SSL certificate
+    - Application LB: HTTP, HTTPS, WebSocket. Support multiple SSL certificates by using SNI (Server Name Indication)
+    - Network LB: TCP, TLS(secure TCP), UDP
+- Load balancer stickiness ensures traffic is sent to the same backend instance for a client. This helps maintaining session data
+- Need to check `X-Forwarded-For` header in the backend to find out the true IP of the clients connecting to ALB.
+- NLB provide the highest performance if your application needs it
+- Network Load Balancers expose a public static IP, whereas an Application or Classic Load Balancer exposes a static DNS (URL)
+- SNI (Server Name Indication) is a feature allowing you to expose multiple SSL certs if the client supports it. Read more here: [https://aws.amazon.com/blogs/aws/new-application-load-balancer-sni/](https://aws.amazon.com/blogs/aws/new-application-load-balancer-sni/)
+- Auto scaling groups scaling policies
+    - Dynamic scaling: Target tracking, Simple, step
+    - Scheduled actions
+    - Predictive scaling
+- ASG scaling cooldown period is 300 seconds by default
+- Default Termination Policy for ASG tries to balance across AZ first, and then delete based on the age of the launch configuration.
+- ElastiCache and RDS Read Replicas do indeed help with scaling reads.
+- Read replicas have async replication, therefore the users will observe eventually consistency
+- Multi AZ keeps the same connection string regardless of which database is up. Read Replicas (except Aurora) imply we need to reference them individually in our application as each read replica will have its own DNS name
+- Storing Session Data in ElastiCache is a common pattern to ensuring different instances can retrieve your user's state if needed.
+- Oracle and MS SQL Server suport TDE (Transparent Data Encryption) on top of KMS.
+- Oracle and MS SQL Server don't support IAM authentication
+- Important ports:
+    - FTP: 21
+    - SSH: 22
+    - SFTP: 22 (same as SSH)
+    - HTTP: 80
+    - HTTPS: 443
+- RDS Databases ports:
+    - PostgreSQL: 5432
+    - MySQL: 3306
+    - Oracle RDS: 1521
+    - MSSQL Server: 1433
+    - MariaDB: 3306 (same as MySQL)
+    - Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
+- The DNS protocol does not allow you to create a Route 53 type CNAME record for the top node of a DNS namespace (mycoolcompany.com), also known as the zone apex. You can use alias instead.
+- DNS records have a TTL (Time to Live) in order for clients to know for how long to caches these values and not overload the DNS with DNS requests. TTL should be set to strike a balance between how long the value should be cached vs how much pressure should go on the DNS.
+- Latency will evaluate the latency results and help your users get a DNS response that will minimize their latency (e.g. response time)
+- Private hosted zones are meant to be used for internal network queries and are not publicly accessible. Public Hosted Zones are meant to be used for people requesting your website through the public internet. Finally, NS records must be updated on the 3rd party registrar.
+- With SSE-KMS you let AWS manage the encryption keys but you have full control of the key rotation policy
+- With Client Side Encryption you perform the encryption yourself and send the encrypted data to AWS directly. AWS does not know your encryption keys and cannot decrypt your data.
+- Explicit DENY in an IAM policy will take precedence over a bucket policy permission
+- Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. To learn more about CORS, go here: https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html
+- MFA Delete forces users to use MFA tokens before deleting objects. It's an extra level of security to prevent accidental deletes
+- Pre-Signed URL are temporary and grant time-limited access to some actions in your S3 bucket.
+- It is recommended to use multi-part upload for file size > 100MB. S3 provides a feature called Byte Range Fetch to get the object efficiently.
+- CloudFront Signed URL are commonly used to distribute paid content through dynamic CloudFront Signed URL generation. But one URL for one content.
+- S3 Cross Region Replication allows you to replicate the data from one bucket in a region to another bucket in another region with low latency
+- CloudFront Geo restriction with white list and black list
+- CloudFront signed cookies. One cookies for multiple contents.
+- Global Accelerator will provide us with the two static IP (anycast IP), and the ALB will provide use with the HTTP routing rules
+- SQS standard - at least once delivery, best effort ordering; SQS FIFO - first in first out delivery, exact once processing (limited number of transactions per second (TPS).)
+- Immediately after a message is received, it remains in the queue. To prevent other consumers from processing the message again, Amazon SQS sets a visibility timeout, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message. Increasing the timeout gives more time to the consumer to process that message and will prevent duplicate readings of the message
+- SQS temporary queue client for resquest-response messaging pattern
+- SNS + SQS Fan out is a common pattern as only one message is sent to SNS and then "fan out" to multiple SQS queues
+- Kinesis data stream - Each shard allows for 1MB/s incoming and 2MB/s outgoing of data; By providing a partition key when producing data we ensure the data is ordered for our users
+- Amazon MQ supports JMS, NMS, AMQP, STOMP, MQTT, and WebSocket
+- IAM policy types: ?
+- On-prem to AWS: customer gateway(public IP) -> Virtual Private Gateway(public IP) -> AWS VPC
+- Streams enable DynamoDB to get a changelog and use that changelog to replicate data across regions
+- High Resolution Custom Metrics can have a minimum resolution of 1 second. An Alarm on a High Resolution Metric can be triggered as often as 10 second.
+- We'd like to have CloudWatch Metrics for EC2 at a 1 minute rate, to enable detailed monitoring
+- STS will allow us to get cross account access through the creation of a role in our account authorized to access a role in another account. See more here: https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html
+- Cognito is made to federate mobile user accounts and provide them with their own IAM policy. As such, they should be able thanks to that policy to access their own personal space in Amazon S3.
+- Default VPC: NACL, security group, routing table, default subnet, internet gateway
+- Customed VPC: NACL, security group, routing table
+- AWS WAF works for CloudFront, ALB, APIGateway
+- Egresss only gateway is for IPv6 only, it is stateful.
+- Amazon DynamoDB and Amazon S3 support gateway endpoints, not interface endpoints. With a gateway endpoint you create the endpoint in the VPC, attach a policy allowing access to the service, and then specify the route table to create a route table entry in.
+- S3 cross region replication only supports copying new Amazon S3 objects after it is enabled.
+- AWS Compute Optimizer recommends optimal AWS Compute resources for your workloads to reduce costs and improve performance by using machine learning to analyze historical utilization metrics. 
+- AWS DMS enables you to seamlessly migrate data from supported sources to relational databases, data warehouses, streaming platforms, and other data stores in AWS cloud.
+- Using Amazon CloudWatch alarm actions, you can create alarms that automatically stop, terminate, reboot, or recover your EC2 instances.
+- The minimum storage duration is 30 days before you can transition objects from S3 Standard to S3 One Zone-IA or S3 Standard-IA.
+- The data stored on the Snowball Edge device can be copied into the S3 bucket and later transitioned into AWS Glacier via a lifecycle policy. You can't directly copy data from Snowball Edge devices into AWS Glacier.
+- By default, FIFO queues support up to 3,000 messages per second with batching, or up to 300 messages per second (300 send, receive, or delete operations per second) without batching. The name of a FIFO queue must end with the .fifo suffix.
+- GuardDuty input data includes CloudTrail logs, VPC Flow logs, DNS logs.
+- Use EC2 Auto Scaling lifecycle hooks to execute a custom script to send data to the audit system when instances are launched and terminated.
+- AWS Resource Access Manager (RAM) is a service that enables you to easily and securely share AWS resources with any AWS account or within your AWS Organization. You can share AWS Transit Gateways, Subnets, AWS License Manager configurations, and Amazon Route 53 Resolver rules resources with RAM.
+- Amazon API Gateway provides throttling at multiple levels including global and by a service call. Throttling limits can be set for standard rates and bursts. For example, API owners can set a rate limit of 1,000 requests per second for a specific method in their REST APIs, and also configure Amazon API Gateway to handle a burst of 2,000 requests per second for a few seconds.
+- Amazon Aurora typically involves a cluster of DB instances instead of a single instance. Each connection is handled by a specific DB instance. When you connect to an Aurora cluster, the host name and port that you specify point to an intermediate handler called an endpoint. For clusters with DB instances of different capacities or configurations, you can connect to custom endpoints associated with different subsets of DB instances.
+- You can invoke an AWS Lambda function from an Amazon Aurora MySQL-Compatible Edition DB cluster with a native function or a stored procedure. This approach can be useful when you want to integrate your database running on Aurora MySQL with other AWS services.
+- Here are the prerequisites for routing traffic to a website that is hosted in an Amazon S3 Bucket:
+    - An S3 bucket that is configured to host a static website. The bucket must have the same name as your domain or subdomain. For example, if you want to use the subdomain portal.tutorialsdojo.com, the name of the bucket must be portal.tutorialsdojo.com.
+    - A registered domain name. You can use Route 53 as your domain registrar, or you can use a different registrar.
+    - Route 53 as the DNS service for the domain. If you register your domain name by using Route 53, we automatically configure Route 53 as the DNS service for the domain.
+- The best way to implement a bastion host is to create a small EC2 instance which should only have a security group from a particular IP address for maximum security. This will block any SSH Brute Force attacks on your bastion host. It is also recommended to use a small instance rather than a large one because this host will only act as a jump server to connect to other instances in your VPC and nothing else.
+- AWS Transit Gateway provides a hub and spoke design for connecting VPCs and on-premises networks. You can attach all your hybrid connectivity (VPN and Direct Connect connections) to a single Transit Gateway consolidating and controlling your organization's entire AWS routing configuration in one place. It also controls how traffic is routed among all the connected spoke networks using route tables. This hub and spoke model simplifies management and reduces operational costs because VPCs only connect to the Transit Gateway to gain access to the connected networks.
+- AWS storage gateway. File Gateway - NFS/SMB, user auth with AD, back by S3; Volume Gateway - iSCSI, block storage, back by S3 with EBS snapshots; Tape Gateway
+- An io1 volume can range in size from 4 GiB to 16 TiB. You can provision from 100 IOPS up to 64,000 IOPS per volume on Nitro system instance families and up to 32,000 on other instance families. The maximum ratio of provisioned IOPS to requested volume size (in GiB) is 50:1.
+- Application Load Balancers support Weighted Target Groups routing.
+- Snowball cannot import to Glacier directly. You must use Amazon S3 first, in combination with an S3 lifecycle policy
+- S3 strong read-after-write consistency - After a successful write of a new object, or an overwrite or delete of an existing object, any subsequent read request immediately receives the latest version of the object.
+- CodeCommit: service where you can store your code. Similar service is GitHub
+- CodeBuild: build and testing service in your CICD pipelines
+- CodeDeploy: deploy the packaged code onto EC2 and AWS Lambda
+- CodePipeline: orchestrate the actions of your CICD pipelines (build stages, manual approvals, many deploys, etc)
+- CloudFormation: Infrastructure as Code for AWS. Declarative way to manage, create and update resources.
+- ECS (Elastic Container Service): Docker container management system on AWS. Helps with creating micro-services.
+- ECR (Elastic Container Registry): Docker images repository on AWS. Docker Images can be pushed and pulled from there
+- Step Functions: Orchestrate / Coordinate Lambda functions and ECS containers into a workflow
+- SWF (Simple Workflow Service): Old way of orchestrating a big workflow.
+- EMR (Elastic Map Reduce): Big Data / Hadoop / Spark clusters on AWS, deployed on EC2 for you
+- Glue: ETL (Extract Transform Load) service on AWS
+- OpsWorks: managed Chef & Puppet on AWS
+- ElasticTranscoder: managed media (video, music) converter service into various optimized formats
+- Organizations: hierarchy and centralized management of multiple AWS accounts
+- Workspaces: Virtual Desktop on Demand in the Cloud. Replaces traditional on-premise VDI infrastructure
+- AppSync: GraphQL as a service on AWS
+- SSO (Single Sign On): One login managed by AWS to log in to various business SAML 2.0-compatible applications (office 365 etc)
+
+*Image by [Free-Photos](https://pixabay.com/photos/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=336542) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=336542)*
