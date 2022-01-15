@@ -4,7 +4,6 @@ title:      "Useful Resources"
 date:       2021-11-14 12:00:00
 author:     "Jason Feng"
 header-img: "img/tunnel-4427609_1920.jpg"
-sticky: true
 excerpt_separator: <!--more-->
 tags:
     - resource
@@ -23,7 +22,7 @@ A list of curated resources which is growing over the time。
 - [AWS this is my architecture](https://aws.amazon.com/architecture/this-is-my-architecture/?tma.sort-by=item.additionalFields.airDate&tma.sort-order=desc&awsf.category=*all&awsf.use-case=*all&awsf.industry=*all&awsf.language=*all&awsf.show=*all&awsf.format=*all)
 - [Get AWS Certified: Solutions Architect Challenge](https://pages.awscloud.com/GLOBAL_TRAINCERT_takethechallenge_resourcehub.html#GetStarted) - this helps me pass the AWS Solution Architect Associate certificate
 - [Lambda Powertools Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/)
-- [AWS Data Wrangler](https://aws-data-wrangler.readthedocs.io/en/stable/) - this will make Lambda as a powerful ETL tool.
+- [AWS Data Wrangler](https://aws-data-wrangler.readthedocs.io/en/stable/) - this makes Lambda as a powerful ETL tool.
 
 ### Data Engineering
 - [Almost Everything You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
@@ -31,7 +30,7 @@ A list of curated resources which is growing over the time。
 - [What is MLOps](https://content.dataiku.com/o-reilly-report-what-is-mlops/)
 - [Data Observability](https://www.montecarlodata.com/data-observability-in-practice-using-sql-1/)
 
-### Machine Learning
+### Anomaly Detection
 - [Deep Learning for Anomaly Detection](http://ff12.fastforwardlabs.com/) - This is an applied research report by Cloudera Fast Forward.
 - [Twitter's Anomaly Detection in Pure Python](https://github.com/Marcnuth/AnomalyDetection)
 - [Anomaly detection analysis and labeling tool](https://github.com/microsoft/TagAnomaly)
@@ -42,6 +41,7 @@ A list of curated resources which is growing over the time。
 - [Anomaly detection with Facebook Prophet](https://medium.com/analytics-vidhya/time-series-forecast-anomaly-detection-with-facebook-prophet-558136be4b8d)
 
 ### Finance Related
+- [Implement anti-money laundering solutions on AWS](https://aws.amazon.com/blogs/big-data/implement-anti-money-laundering-solutions-on-aws/)
 - [Goldman Sachs Python toolkit for quantitative finance](https://github.com/goldmansachs/gs-quant)
 - [GS quant](https://developer.gs.com/discover/gs-quant)
 - [Microsoft qlib](https://github.com/microsoft/qlib)
