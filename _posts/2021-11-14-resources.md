@@ -23,6 +23,7 @@ A list of curated resources which is growing over the time。
 - [Get AWS Certified: Solutions Architect Challenge](https://pages.awscloud.com/GLOBAL_TRAINCERT_takethechallenge_resourcehub.html#GetStarted) - this helps me pass the AWS Solution Architect Associate certificate
 - [Lambda Powertools Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/)
 - [AWS Data Wrangler](https://aws-data-wrangler.readthedocs.io/en/stable/) - this makes Lambda as a powerful ETL tool.
+- [AWS Serverless](https://serverlessland.com/)
 
 ### Data Engineering
 - [Almost Everything You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
@@ -33,6 +34,7 @@ A list of curated resources which is growing over the time。
 ### Anomaly Detection
 - [Deep Learning for Anomaly Detection](http://ff12.fastforwardlabs.com/) - This is an applied research report by Cloudera Fast Forward.
 - [Twitter's Anomaly Detection in Pure Python](https://github.com/Marcnuth/AnomalyDetection)
+- [Fine-Grained Time Series Forecasting at Scale With Facebook Prophet and Apache Spark](https://databricks.com/blog/2021/04/06/fine-grained-time-series-forecasting-at-scale-with-facebook-prophet-and-apache-spark-updated-for-spark-3.html)
 - [Anomaly detection analysis and labeling tool](https://github.com/microsoft/TagAnomaly)
 - [Alibi detect](https://github.com/SeldonIO/alibi-detect)
 - [Microsoft SR-CNN](https://github.com/microsoft/anomalydetector)
@@ -40,11 +42,15 @@ A list of curated resources which is growing over the time。
 - [Azure Anomaly Detector API blog](https://techcommunity.microsoft.com/t5/ai-customer-engineering-team/introducing-azure-anomaly-detector-api/ba-p/490162)
 - [Anomaly detection with Facebook Prophet](https://medium.com/analytics-vidhya/time-series-forecast-anomaly-detection-with-facebook-prophet-558136be4b8d)
 
+### Time series
+- [Darts Time Series Made Easy in Python](https://unit8co.github.io/darts/)
+
 ### Finance Related
 - [Implement anti-money laundering solutions on AWS](https://aws.amazon.com/blogs/big-data/implement-anti-money-laundering-solutions-on-aws/)
 - [Goldman Sachs Python toolkit for quantitative finance](https://github.com/goldmansachs/gs-quant)
 - [GS quant](https://developer.gs.com/discover/gs-quant)
 - [Microsoft qlib](https://github.com/microsoft/qlib)
+- [Blankly Finance](https://github.com/Blankly-Finance/Blankly)
 
 ### Python
 - [Real Python repo](https://github.com/realpython)
