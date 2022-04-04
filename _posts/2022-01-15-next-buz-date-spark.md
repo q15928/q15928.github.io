@@ -11,17 +11,14 @@ tags:
 ---
 Here is how to use Pyspark to generate a dataframe showing the date and the next business date given the country and optional state.
 <!--more-->
-#### Key points
+### Key points
 - Use `sequence` and `explode` functions to generate the calendar date.
 - Use *holidays* package to create the dataframe of holidays given the country and optional state.
 - Filter out weekends and use `left_anti` to exclude public holidays.
 - Apply window functions to derive next business date.
-#### Show me the code
-```python
-# Install the required packages
-# !pip install pyspark
-# !pip install -U holidays
 
+### Show me the code
+```python
 from pyspark.sql import SparkSession
 import pyspark.sql.functions as F
 from pyspark.sql.window import Window
@@ -76,3 +73,6 @@ def get_next_buz_date(start_date, end_date, country, state=None):
     return buz_day_df
 
 ```
+
+### Link to colab
+Here is the [link](https://colab.research.google.com/drive/1raQDUtntPnxEvzpCq0lz6Ev7rwD6gKR2?usp=sharing)
