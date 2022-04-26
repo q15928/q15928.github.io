@@ -24,12 +24,14 @@ A list of curated resources which is growing over the time。
 - [Lambda Powertools Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/)
 - [AWS Data Wrangler](https://aws-data-wrangler.readthedocs.io/en/stable/) - this makes Lambda as a powerful ETL tool.
 - [AWS Serverless](https://serverlessland.com/)
+- [Amazon Athena Workshop](https://catalog.us-east-1.prod.workshops.aws/workshops/9981f1a1-abdc-49b5-8387-cb01d238bb78/en-US/)
 
 ### Data Engineering
 - [Almost Everything You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
 - [What Is Data Engineering](https://realpython.com/python-data-engineer/)
 - [What is MLOps](https://content.dataiku.com/o-reilly-report-what-is-mlops/)
 - [Data Observability](https://www.montecarlodata.com/data-observability-in-practice-using-sql-1/)
+- [Apache Iceberg: An Architectural Look Under the Covers](https://www.dremio.com/resources/guides/apache-iceberg-an-architectural-look-under-the-covers/)
 
 ### Anomaly Detection
 - [Deep Learning for Anomaly Detection](http://ff12.fastforwardlabs.com/) - This is an applied research report by Cloudera Fast Forward.
