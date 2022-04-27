@@ -19,4 +19,4 @@ Additionally, during the show time, we boosted the car to achieve the best time 
 
 Photos of the event [https://lnkd.in/g8WdMiSe](https://lnkd.in/g8WdMiSe)
 
-Link to the car chasing video is [here](https://www.linkedin.com/posts/jasonfeng_deepracer-activity-6913608072485617664-BNXf?utm_source=linkedin_share&utm_medium=member_desktop_web)
+Link to the car chasing video is [here](https://q15928.github.io/contents/2022-02-27-deepracer-shanghai.mp4)
