@@ -33,6 +33,11 @@ A list of curated resources which is growing over the time。
 - [Data Observability](https://www.montecarlodata.com/data-observability-in-practice-using-sql-1/)
 - [Apache Iceberg: An Architectural Look Under the Covers](https://www.dremio.com/resources/guides/apache-iceberg-an-architectural-look-under-the-covers/)
 
+### Reinforcement Learning
+- [An Introduction to Reinforcement Learning with OpenAI Gym, RLlib, and Google Colab](https://www.anyscale.com/blog/an-introduction-to-reinforcement-learning-with-openai-gym-rllib-and-google)
+- [Easy RL](https://datawhalechina.github.io/easy-rl/#/)
+- [Deep Reinforcement Learning](https://deepreinforcementlearningbook.org/)
+
 ### Anomaly Detection
 - [Deep Learning for Anomaly Detection](http://ff12.fastforwardlabs.com/) - This is an applied research report by Cloudera Fast Forward.
 - [Twitter's Anomaly Detection in Pure Python](https://github.com/Marcnuth/AnomalyDetection)
