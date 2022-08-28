@@ -26,6 +26,9 @@ A list of curated resources which is growing over the time。
 - [AWS Serverless](https://serverlessland.com/)
 - [Amazon Athena Workshop](https://catalog.us-east-1.prod.workshops.aws/workshops/9981f1a1-abdc-49b5-8387-cb01d238bb78/en-US/)
 
+### Databricks / Spark
+- [Databricks data analyst training](
+https://files.training.databricks.com/distributions/data-analysis-with-databricks/v1.1.5/site/index.html)
 ### Data Engineering
 - [Almost Everything You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
 - [What Is Data Engineering](https://realpython.com/python-data-engineer/)
@@ -50,6 +53,7 @@ A list of curated resources which is growing over the time。
 - [Anomaly detection with Facebook Prophet](https://medium.com/analytics-vidhya/time-series-forecast-anomaly-detection-with-facebook-prophet-558136be4b8d)
 
 ### Time series
+- [Scalable and user friendly neural brain forecasting algorithms for time series data](https://github.com/Nixtla/neuralforecast)
 - [Darts Time Series Made Easy in Python](https://unit8co.github.io/darts/)
 
 ### Finance Related
