@@ -4,7 +4,7 @@ title:      "头痛病史"
 date:       2020-08-02 12:00:00
 author:     "Jason Feng"
 header-img: "img/tunnel-4427609_1920.jpg"
-sticky: true
+# sticky: true
 excerpt_separator: <!--more-->
 tags:
     - 头痛
