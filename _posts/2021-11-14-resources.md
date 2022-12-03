@@ -4,6 +4,7 @@ title:      "Useful Resources"
 date:       2021-11-14 12:00:00
 author:     "Jason Feng"
 header-img: "img/tunnel-4427609_1920.jpg"
+sticky: true
 excerpt_separator: <!--more-->
 tags:
     - resource
@@ -24,11 +25,14 @@ A list of curated resources which is growing over the time。
 - [Lambda Powertools Python](https://awslabs.github.io/aws-lambda-powertools-python/latest/)
 - [AWS Data Wrangler](https://aws-data-wrangler.readthedocs.io/en/stable/) - this makes Lambda as a powerful ETL tool.
 - [AWS Serverless](https://serverlessland.com/)
+- [Getting started building your first serverless web application - Emily Shea](https://serverlessland.com/reinvent2020/svs202)
 - [Amazon Athena Workshop](https://catalog.us-east-1.prod.workshops.aws/workshops/9981f1a1-abdc-49b5-8387-cb01d238bb78/en-US/)
+- [Building serverless applications with streaming data](https://aws.amazon.com/blogs/compute/building-serverless-applications-with-streaming-data-part-1/)
 
 ### Databricks / Spark
 - [Databricks data analyst training](
 https://files.training.databricks.com/distributions/data-analysis-with-databricks/v1.1.5/site/index.html)
+
 ### Data Engineering
 - [Almost Everything You Need To Know on Data Discovery Platforms](https://eugeneyan.com/writing/data-discovery-platforms/)
 - [What Is Data Engineering](https://realpython.com/python-data-engineer/)
@@ -71,5 +75,6 @@ https://files.training.databricks.com/distributions/data-analysis-with-databrick
 - [Kube Academy](https://kube.academy/)
 
 ### Online Learning
+- [roadmap.sh](https://roadmap.sh)
 - [150+ Stanford On-Campus Computer Science Courses Available Online](https://www.classcentral.com/report/stanford-on-campus-courses/)
 - [Learn Docker & Containers using Interactive Browser-Based Scenarios](https://www.katacoda.com/courses/docker)
